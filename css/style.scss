@@ -1,0 +1,719 @@
+@import url("https://fonts.googleapis.com/css2?family=Philosopher:wght@400;700&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,200&display=swap");
+
+
+
+
+$primary-color: #000000;
+$secondary-color: #4776e6;
+$bg-primary: #f5f5f5;
+$bg-secondary: #fff;
+
+$tertiary-color: #f7f7f9;
+
+$text-white: #ffffff;
+
+$fontPhilosopher: "Philosopher", sans-serif;
+
+$fontPoppins: "Poppins", sans-serif;
+
+@mixin boxShadowPrimary {
+  
+  box-shadow: 0px 0px 50px rgba(0, 0, 0, 0.1);
+}
+
+:root {
+  font-size: 16px;
+}
+
+body {
+  font-family: $fontPoppins;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  position: relative;
+  color: $primary-color;
+}
+
+.vh100 {
+  min-height: 100vh;
+}
+
+/*---navbar--*/
+.navbar {
+  width: 100%;
+
+  .right-nav{
+
+    .nav-item{
+
+      .nav-link{
+        color: $primary-color;
+        font-size: 1.5rem;
+
+        &:hover{
+          color: rgba(0,0,0,.9);
+          cursor: pointer;
+
+          &::after{
+            content:none;
+            
+          }
+        }
+
+      }
+    }
+  }
+
+  &.cust-nav{
+    background: $bg-primary !important;
+  }
+
+  .navbar-nav {
+    font-family: $fontPhilosopher;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1.125rem;
+    color: $primary-color;
+
+    .nav-link {
+      color: #000;
+    }
+
+    
+  }
+
+  .nav-item {
+    a {
+      
+      position: relative;
+
+      &:hover{
+       
+
+        &::after{
+          content: "";
+          position: absolute;
+          width: 17px;
+          height: 4px;
+          background: #000;
+          bottom: 0;
+          margin: 0 auto;
+          left: 0;
+          right: 0;
+          
+        }
+      }
+      &.active{
+        &::after{
+          content: "";
+          position: absolute;
+          width: 17px;
+          height: 4px;
+          background: #000;
+          bottom: 0;
+          margin: 0 auto;
+          left: 0;
+          right: 0;
+          
+        }
+      }
+
+     
+    }
+  }
+}
+
+/*----------banner----*/
+.banner-section {
+  padding-top: 6rem;
+  padding-bottom: 6rem;
+  background-color: $bg-primary;
+  position: relative;
+
+  &.vh100{
+    min-height: calc(100vh - (-6rem)) !important;
+  
+  }
+
+  .t-main {
+    position: relative;
+
+    &:before {
+      content: url(../images/particle1.svg);
+      position: absolute;
+      background-image: url(../images/particle1.svg);
+      left: -5rem;
+      top: 0rem;
+
+      // width: 1px;
+      height: 1px;
+    }
+
+    &:after {
+      content: url(../images/particle1.svg);
+      position: absolute;
+      background-image: url(../images/particle1.svg);
+      right: 0;
+      bottom: 6rem;
+      // width: 1px;
+      height: 1px;
+      z-index: 2;
+    }
+
+    &.pb-6{
+      padding-bottom: 6rem;
+    }
+
+    .txt-area {
+      padding: 3rem 0;
+
+       h1{
+        font-family: $fontPhilosopher;
+        font-weight: 700;
+        font-size: 5rem;
+        color: $primary-color;
+
+        +.sub{
+          font-family: $fontPhilosopher;
+        font-weight: 400;
+        font-size: 5rem;
+        color: $primary-color;
+        }
+      }
+
+     
+      .lead{
+        font-size: 1.5625rem;
+        color: $primary-color;
+        font-weight: 300;
+        line-height: 2.3125rem;
+      }
+    }
+  }
+
+
+
+    img{width: auto;}
+
+    .bnr-im-1{
+      position: relative;
+    z-index: 3;
+    }
+    .bnr-im-2{
+      position: absolute;
+      bottom: 0;
+      z-index: 2;
+
+      img{
+        width: 100%;
+      }
+    }
+    .bnr-im-3 {
+      position: absolute;
+      z-index: 1;
+      bottom: -5rem;
+  }
+
+
+  .divider {
+    position: absolute;
+    bottom: 0;
+    background-size: cover;
+    background-image: url(../images/shape-bottom1.svg);
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-size: 100%;
+    width: 100%;
+    height: 8rem;
+  }
+}
+
+
+/*---------what we do-------*/
+
+.what-we-do-section {
+  padding-top: 6rem;
+  padding-bottom: 1rem;
+  background-color: $bg-secondary;
+  position: relative;
+
+  .card {
+    border-radius: 1rem;
+    @include boxShadowPrimary; 
+    padding: 3rem 4.5rem 3rem 1.5rem;
+    font-family: $fontPoppins;
+    transition: 0.5s;
+
+    &:hover{
+      transform: translateY(-10px);
+    }
+
+    h4 {
+      font-family: $fontPhilosopher;
+      font-size: 1.875rem;
+      line-height: 2rem;
+      font-weight: 400;
+    }
+    p {
+      font-size: 1rem;
+      line-height: 1.5rem;
+      font-weight: 400;
+    }
+
+    a {
+      font-family: $fontPhilosopher;
+      text-decoration: none;
+      color: $primary-color;
+      font-size: 1.125rem;
+
+      &:hover {
+        color: $secondary-color;
+      }
+    }
+  }
+  .left-sec {
+    .left-inner {
+      position: relative;
+      height: 100%;
+      display: flex;
+      /* justify-content: center; */
+      flex-direction: column;
+      padding-top: 9rem;
+
+      &:before {
+        content: url(../images/particle2.svg);
+        position: absolute;
+
+        left: -4rem;
+        top: 0rem;
+        // width: 1px;
+        height: 1px;
+        z-index: 2;
+      }
+      &:after {
+        content: url(../images/particle1.svg);
+        position: absolute;
+
+        left: -4rem;
+        bottom: 2rem;
+        // width: 1px;
+        height: 1px;
+        z-index: 2;
+      }
+    }
+
+    h6 {
+      font-family: $fontPhilosopher;
+      font-weight: 700;
+      font-size: 1.25rem;
+      line-height: 1.375rem;
+      color: $secondary-color;
+    }
+
+    h3 {
+      font-family: $fontPhilosopher;
+      font-weight: 700;
+      font-size: 3.125rem;
+      line-height: 3.5rem;
+
+      + P {
+        font-weight: 500;
+        font-size: 1.125rem;
+        line-height: 1.6875rem;
+        color: #828282;
+      }
+    }
+
+    p {
+      color: #828282;
+      font-weight: 300;
+    }
+  }
+  .divider {
+    position: absolute;
+    /* bottom: 0;
+        
+        background-image: url(../images/shape-bottom2.svg);
+        background-repeat: no-repeat;
+        background-position: bottom;
+        background-size: 100%;
+        width: 100%;
+        height: 100%;*/
+  }
+}
+
+
+/*-----latest works--------*/
+.latest-works-section {
+  position: relative;
+  padding-top: 0rem;
+  padding-bottom: 4rem;
+
+  background-color: $bg-primary;
+  background-position: top;
+    z-index: 0;
+
+  .divider {
+    position: relative;
+    height: 14rem;
+    background-image: url(../images/shape-bottom2.svg);
+    background-repeat: no-repeat;
+    background-position: top;
+    background-size: cover;
+    top: 0;
+  }
+  .divider-bottom {
+    position: relative;
+    height: 14rem;
+    background-image: url(../images/shape-bottom4.png);
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-size: cover;
+
+    bottom: 3rem;
+    z-index: -1;
+    width: 100%;
+    position: absolute;
+  }
+  .divider-bottom-last {
+    height: 4rem;
+    background-color: #fff;
+    background-position: bottom;
+    background-size: cover;
+    bottom: 0rem;
+    z-index: -1;
+    width: 100%;
+    position: absolute;
+  }
+
+  h3 {
+    font-family: $fontPhilosopher;
+    font-weight: 700;
+    font-size: 3.125rem;
+    line-height: 3.5rem;
+  }
+
+  .scrolling-wrapper {
+    overflow-x: auto;
+    overflow-y: hidden;
+
+    &::-webkit-scrollbar {
+        height: 0.5rem;
+    }
+    &::-webkit-scrollbar-track {
+        background: #C4C4C4;
+        border-radius: 10px;
+    }
+     
+    &::-webkit-scrollbar-thumb {
+      background-color: #4776E6;
+      border-radius: 10px;
+     
+    }
+
+    .card {
+      border: none;
+      border-radius: 10px;
+
+      .img-overlay {
+        background: #4776e6ba;
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        border-radius: 10px;
+        opacity: 0;
+        transition: all 0.4s ease-in-out 0s;
+      }
+      .content-img {
+        width: 100%;
+        border-radius: 10px;
+      }
+      .content-details {
+        position: absolute;
+        // text-align: center;
+        padding-left: 1em;
+        padding-right: 1em;
+        width: 100%;
+        height: 100%;
+        top: 50%;
+        left: 1rem;
+        // left: 50%;
+        font-family: $fontPhilosopher;
+        font-weight:400 ;
+        opacity: 0;
+        transition: all 0.3s ease-in-out 0s;
+        color: #fff;
+
+        .title{
+            font-size: 1.56rem;
+
+        }
+        .content-text{
+            font-size: 1.125rem;
+            opacity: 0.8; 
+
+        }
+      }
+
+      &:hover {
+        .img-overlay {
+          opacity: 1;
+        }
+        .content-details {
+          top: 1.5rem;
+          left: 1rem;
+          opacity: 1;
+
+        }
+        .link {
+          display: flex;
+          position: absolute;
+          flex-direction: column;
+          width: 100%;
+          height: 100%;
+          justify-content: end;
+          padding: 0 0 2rem 2rem;
+          opacity: 1;
+          color: #fff;
+          font-family: $fontPhilosopher;
+          font-size:1.125rem ;
+        }
+      }
+
+      .link {
+        display: flex;
+        position: absolute;
+        flex-direction: column;
+        width: 100%;
+        height: 100%;
+        justify-content: end;
+        padding: 0 0 0rem 2rem;
+        opacity: 0;
+        transition: all 0.3s ease-in-out 0s;
+        font-family: $fontPhilosopher;
+        font-size:1.125rem;
+
+        a{
+            color: #fff;
+            text-decoration: none;
+            font-family: $fontPhilosopher;
+            font-size:1.125rem;
+        }
+      }
+    }
+  }
+}
+
+
+/*---------footer---------*/
+footer{
+  
+background: $bg-primary;
+  font-size:0.875rem ;
+  color: #595959;
+  font-weight: 400;
+
+  h4{
+    font-size: 1.25rem;
+    margin-bottom: 2rem;
+    font-family: $fontPhilosopher;
+    color: $primary-color;
+    font-weight: 400;
+
+    +p{
+      line-height: 1.3125rem;
+    }
+  }
+
+  .qk-link{
+    ul{
+      padding: 0;
+    margin: 0;
+
+    li {
+      display: inline-block;
+      margin-right: 0.2rem;
+      margin-bottom: 1rem;
+      line-height: 1.3125rem;
+      
+      a{
+        text-decoration: none;
+        color: #595959;
+
+        &:hover{
+          opacity: 0.9;
+        }
+      }
+      
+    } 
+  }
+}
+
+.rc-post{
+  display: flex;
+
+  img{
+    border-radius: 7px;
+    margin-right: 0.5rem;
+  }
+  .rc-text{
+    display: flex;
+    flex-direction: column;
+
+    h4{
+      margin-bottom: 0.5rem;
+      font-family: $fontPoppins;
+      color: $primary-color;
+      font-size: 0.875rem;
+      font-weight: 500;
+
+      +p{
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 18px;
+        margin-bottom: 0.3rem;
+      }
+    }
+  }
+}
+    .form-row {
+        display: flex;
+        flex-wrap: wrap;
+        margin-right: -5px;
+        margin-left: -5px;
+
+        .sub-mail-main{
+          display: flex;
+          width: 100%;
+
+          .left{
+            display: flex;
+            flex-grow: 1;
+            padding-right: 0.5rem;
+          }
+          .right{
+            display: flex;
+            flex-grow: 0;
+           
+          }
+        }
+
+        .form-control{
+          font-size: 12px;
+          padding: 0.775rem 0.75rem;
+        }
+    }
+    .footer-social  {
+
+      ul{
+        padding: 0;
+      margin: 0;
+
+      li {
+        display: inline-block;
+        margin-right: 0.2rem;
+
+        a {
+          display: inline-block;
+          color:$primary-color;
+          background-color: #fff;
+          border-radius: 4px;
+          height: 40px;
+          width: 40px;
+          text-align: center;
+          line-height: 40px;
+          transition: all 0.1s ease-in-out;
+          border: 1px solid #4776e682;
+
+          &:hover{
+            background: $secondary-color;
+            color: $text-white;
+          }
+          
+      }
+    }
+      }
+      
+  }
+}
+
+
+/*--------custom btn-----*/
+.btn{
+  line-height: 1.8;
+  font-family: $fontPhilosopher;
+  font-size: 1rem;
+  color: $secondary-color;
+  background: $text-white;
+
+  &.btn-primary{
+
+    &:focus{
+      background-color: $secondary-color;
+    }
+    &:hover{
+      background-color: $secondary-color;
+    }
+  }
+
+  
+}
+.btn-outline-primary{
+
+  &:focus{
+    background-color: $secondary-color;
+  }
+  &:hover{
+    background-color: $secondary-color;
+  } 
+}
+
+
+
+
+/*-------carousel----------*/
+
+#carouselExampleIndicators .carousel-indicators {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 0;
+  margin-right: 0;
+  margin-bottom: 0;
+  margin-left: 0;
+  list-style: none;
+
+  [data-bs-target] {
+    box-sizing: content-box;
+    flex: 0 1 auto;
+    width: 16px;
+    height: 16px;
+    border-radius: 100%;
+    padding: 0;
+    margin-right: 3px;
+    margin-left: 3px;
+    text-indent: -999px;
+    cursor: pointer;
+    background-color: $primary-color;
+    background-clip: padding-box;
+    border: 0;
+    /* border-top: 10px solid transparent; */
+    /* border-bottom: 10px solid transparent; */
+    opacity: 1;
+    transition: opacity 0.6s ease;
+  }
+  .active {
+    opacity: 1;
+    background-color: $secondary-color;
+    width: 20px;
+    height: 20px;
+  }
+}
